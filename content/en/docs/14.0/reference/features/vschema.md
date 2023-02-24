@@ -194,14 +194,14 @@ VSchema:
       ],
       "auto_increment": {
         "column": "user_id",
-        "sequence": "lookup.user_seq"
+        "sequence": "`lookup`.`user_seq`"
       }
     }
   }
 }
 ```
 
-If necessary, the reference to the sequence table `lookup.user_seq` can be escaped using backticks.
+Please note that references to table identifiers in the vschema must parseable by a SQL parser. As such, it is safer that users always escape their table references, especially in automation.
 
 ### Specifying A Secondary Vindex
 
